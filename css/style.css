@@ -1,0 +1,268 @@
+:root {
+    /* deja estas variables sin cambiar*/
+    --fuenteHeading: 'PT Sans', sans-serif;
+    --fuenteParrafos: 'Open Sans', sans-serif;
+
+    /*? crea las variables: 
+    --blanco: dale el color blanco
+    --gris: dale un color gris (puedes usar este codigo #a7a5a5) 
+    --negro: dale el color negro
+    --primario: dale un color a tu gusto!!! */
+
+}
+
+/*! DESDE AQUI, NO TOQUES NADA!!!*/
+html {
+    box-sizing: border-box; /* el border,padding no afecte los elementos */
+    font-size: 62.5%; /* 1 rem = 10px SUPER RECOMENDADO*/    
+}
+*, *:before, *:after {
+    box-sizing: inherit; /* para que herede a sus elementos todos sus propiedades*/
+}
+
+/** Utilidades **/
+.no-margin {
+    margin: 0;
+}
+.no-padding {
+    padding: 0;
+}
+.centrar-texto {
+    text-align: center;
+}
+
+body {
+    font-family: var(--fuenteParrafos);
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+/** Globales **/
+.contenedor { /* clase para usar mis contenedores*/
+    width: min(90%, 120rem); 
+    margin: 0 auto; /* con esto vamos a centrar los elementos en mis contenedores*/
+}
+
+a {
+    text-decoration: none; /*a los enlaces le vamos a quitar los subrayados */
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--fuenteHeading);
+    line-height: 1.2; /* cambiamos el espacio entre lineas de los titulos*/
+    -webkit-text-stroke: 1px black; /* Para navegadores basados en WebKit */
+    color: white; /* Color del texto */
+}
+
+/* diferentes tamaños de letras para cada uno de los elementos titulares*/
+h1 {
+    font-size: 4.8rem;
+}
+h2 {
+    font-size: 4rem;
+}
+h3 {
+    font-size: 3.2rem;
+}
+h4 {
+    font-size: 2.8rem;
+}
+img {
+    max-width: 100%;
+}
+
+/*!!!!---- Desde aqui hasta abajo, debes crear el codigo!!! !!!!!*/
+
+/** Header **/
+
+
+header{
+    background-image: url(img/banner-barberia.jpg) ;
+    height: 60rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.header__texto {
+    text-align: center;
+    color: var(--blanco);
+    margin-top: 15rem;
+}
+
+.barra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 4rem;
+}
+
+.logo {
+    color: var(--blanco);
+}
+
+.logo__nombre {
+    font-weight: 400;
+}
+
+.logo__bold {
+    font-weight: 700;
+}
+
+.navegacion {
+    display: flex;
+    gap: 2rem;
+}
+
+.navegacion__enlace {
+    display: block;
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--blanco);
+}
+
+.contenido-principal {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-columns: 0.5fr;
+    column-gap: 4rem;
+}
+
+.entrada {
+    border-bottom: 1px solid var(--gris);
+    margin-bottom: 2rem;
+}
+.entrada:last-of-type {
+    border: none;
+    margin-bottom: 0;
+}
+
+.boton {
+    display: inline-block;
+    font: var(--fuenteHeading);
+    color: var(--blanco);
+    text-align: center;
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    border: none;
+}
+
+.boton:hover {
+    cursor: pointer;
+}    
+    @keyframes bg {
+        0% {
+            background: pink;
+        }
+
+        50% {
+            background: blue;
+        }
+
+        100% {
+            background: green;
+        }
+    }    
+.boton--primario {
+    background-color: var(--negro);
+}
+.boton-secundario {
+    background-color: var(--negro);
+}
+
+.cursos {
+    list-style: none;
+}
+
+.widget-curso {
+    border-bottom: 1px solid var(--gris);
+    margin-bottom: 2rem;
+}
+.widget-curso:last-of-type {
+    border: none;
+    margin-bottom: 0;
+}
+.widget-curso__label {
+    font-family: var(--fuenteHeading);
+    font-weight: bold;
+}
+.widget-curso__info {
+    font-weight: normal;
+}
+.widget-curso__label,
+.widget-curso__info {
+    font-size: 2rem;
+}
+
+.footer {
+    background-color: var(--negro);
+    padding-bottom: 3rem;
+    margin-top: 4rem;
+}
+
+.sobre-nosotros {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 2rem;
+}
+
+.curso {
+    display: grid;
+    grid-template-columns: (1fr y 2fr);
+    gap: 2rem;
+    border-bottom: 1px solid var(--gris);
+    padding: 3rem;
+}
+
+.curso:last-of-type {
+    border: none;
+}
+.curso__label {
+    font-family: var(--fuenteHeading);
+    font-weight: bold;
+}
+.curso__info {
+    font-weight: normal;
+}
+.curso__label,
+.curso__info {
+    font-size: 2rem;
+}
+
+.contacto-bg::backdrop {
+    background-image: url(img/sobre-nosotros.jpg);
+    height: 40rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.formulario {
+    background-color: var(--blanco);
+    margin: -5rem auto 0 auto;
+    width: 95%;
+    padding: 5rem;
+}
+
+.campo {
+    display: flex;
+    margin-bottom: 2rem;
+}
+.campo__label {
+    flex: 0 0 9rem;
+    text-align: right;
+    padding-right: 2rem;
+}
+.campo__field {
+    flex: 1;
+    border: 1px solid var(--gris);
+}
+.campo__field--textarea {
+    height: 20rem;
+}
+
+.img-entrada{
+    width: 550px;
+}
